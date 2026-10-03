@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #3d0a05;
+  --color-sec: #ac746c;
+  --color-thrd: #a58570;
+  --color-fhrt: #7f1f0e;
+  --color-last: #dac1b1;
+
+  --font-semi: "semi", sans-serif;
+  --font-ita: "ita", serif;
+  --font-love: "love", cursive;
+  --font-texgy: "texgy", serif;
+  --font-gelo: "gelo", serif;
+  --font-asep: "asep", sans-serif;
+  --font-soip: "soip", sans-serif;
+
+  --breakpoint-wide: 900px;
+  --breakpoint-ultra: 1400px;
+
+  --animate-spin-slow: spin-slow 3s linear infinite;
+}
+
+/* ============ FONTS ============ */
+
+@font-face {
+  font-family: "texgy";
+  src: url("/font/texgyrepagella-regular-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "ita";
+  src: url("/font/Cagliostro-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ita";
+  src: url("/font/Avara-italic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "love";
+  src: url("/font/Angelia Beauty.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "semi";
+  src: url("/font/Simple Michael.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "gelo";
+  src: url("/font/Avara.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "asep";
+  src: url("/font/DEVROYSC-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "soip";
+  src: url("/font/AMERIKA_-webfont.ttf") format("truetype");
+}
+
+/* ============ BASE ============ */
+
+@layer base {
+  html {
+    max-width: 600px;
+    color: var(--color-last);
+    font-family: var(--font-semi);
+  }
+
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 700;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1.17em;
+  }
+
+  @media (min-width: 900px) {
+    html {
+      max-width: none;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+    }
+  }
+
+  ::selection {
+    background: var(--color-fhrt);
+    color: var(--color-last);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-primary);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--color-sec), var(--color-fhrt));
+    border-radius: 999px;
+  }
+}
+
+/* ============ KEYFRAMES ============ */
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-spin-slow {
+    animation: none !important;
+  }
+}
